@@ -4,40 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<base href="/bloger-gpt/">
+
 <title>Insight Hub</title>
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<script defer src="/assets/js/main.js"></script>
+<script defer src="assets/js/main.js"></script>
 
 </head>
 
 <body class="bg-orange-300">
 
-<!-- 外层容器（核心UI） -->
 <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg mt-10 p-6">
 
-  <!-- 顶部 -->
+  <!-- HEADER -->
   <div class="flex justify-between items-center mb-6">
-    
-    <h2 class="text-xl font-bold">Latest Articles</h2>
-
-    <div class="flex gap-4 text-sm items-center">
-      <button class="filter active" data-cat="all">All</button>
-      <button class="filter" data-cat="Technology">Technology</button>
-      <button class="filter" data-cat="Finance">Finance</button>
-      <button class="filter" data-cat="AI Tools">AI Tools</button>
-      <button class="filter" data-cat="Health">Health</button>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-black text-white flex items-center justify-center rounded-lg font-bold">AI</div>
+      <span class="font-bold text-lg">InsightHub</span>
     </div>
 
-    <!-- 搜索 -->
-    <input id="search" placeholder="Search..." 
-      class="border rounded-lg px-3 py-1 text-sm">
+    <input id="search" placeholder="Search..." class="border rounded-lg px-3 py-1 text-sm">
   </div>
 
-  <!-- 内容 -->
+  <!-- HERO -->
+  <div class="relative mb-6">
+    <img src="https://source.unsplash.com/1200x400/?ai" class="w-full h-60 object-cover rounded-xl">
+    <div class="absolute bottom-4 left-4 text-white">
+      <h1 class="text-2xl font-bold">Top AI Trends You Should Know</h1>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="flex gap-4 mb-4">
+    <button class="filter active" data-cat="all">All</button>
+    <button class="filter" data-cat="Technology">Technology</button>
+    <button class="filter" data-cat="Finance">Finance</button>
+    <button class="filter" data-cat="AI Tools">AI Tools</button>
+    <button class="filter" data-cat="Health">Health</button>
+  </div>
+
+  <!-- FEED -->
   <div id="feed" class="grid md:grid-cols-3 gap-6"></div>
 
+</div>
+
+<!-- Anchor -->
+<div class="anchor-ad flex items-center justify-center">
+  Anchor Ad
 </div>
 
 </body>
