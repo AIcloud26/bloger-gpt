@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Insight Hub - Tech, Finance, AI Tools</title>
-<meta name="description" content="Latest insights on AI tools, finance, tech and lifestyle">
+<title>Insight Hub</title>
 
 <link rel="stylesheet" href="/assets/css/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -13,51 +12,32 @@
 
 </head>
 
-<body class="bg-gray-50" style="padding-bottom:70px">
+<body class="bg-orange-300">
 
-<!-- NAV -->
-<header class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+<!-- 外层容器（核心UI） -->
+<div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg mt-10 p-6">
+
+  <!-- 顶部 -->
+  <div class="flex justify-between items-center mb-6">
     
-    <div class="flex items-center gap-2">
-      <img src="/assets/images/logo.png" class="h-8">
-      <span class="font-semibold">InsightHub</span>
+    <h2 class="text-xl font-bold">Latest Articles</h2>
+
+    <div class="flex gap-4 text-sm items-center">
+      <button class="filter active" data-cat="all">All</button>
+      <button class="filter" data-cat="Technology">Technology</button>
+      <button class="filter" data-cat="Finance">Finance</button>
+      <button class="filter" data-cat="AI Tools">AI Tools</button>
+      <button class="filter" data-cat="Health">Health</button>
     </div>
 
-    <nav class="flex gap-5 text-sm">
-      <a href="#">Technology</a>
-      <a href="#">Finance</a>
-      <a href="#">AI Tools</a>
-      <a href="#">Health</a>
-    </nav>
-
+    <!-- 搜索 -->
+    <input id="search" placeholder="Search..." 
+      class="border rounded-lg px-3 py-1 text-sm">
   </div>
-</header>
 
-<!-- TOP BANNER -->
-<div class="w-full flex justify-center py-2">
-  <div class="w-full max-w-[728px] h-[90px] bg-gray-200 flex items-center justify-center">
-    Banner Ad
-  </div>
-</div>
+  <!-- 内容 -->
+  <div id="feed" class="grid md:grid-cols-3 gap-6"></div>
 
-<!-- HERO -->
-<section class="max-w-6xl mx-auto p-4">
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <img src="https://source.unsplash.com/1200x400/?technology" class="w-full h-64 object-cover">
-    <div class="p-4">
-      <h1 class="hero-title">Latest Trends in AI, Finance & Tech</h1>
-    </div>
-  </div>
-</section>
-
-<!-- FEED -->
-<section id="feed" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 p-4"></section>
-
-<!-- ANCHOR AD -->
-<div class="anchor-ad flex items-center justify-center">
-  <span onclick="this.parentElement.style.display='none'" style="position:absolute;right:10px;top:5px;cursor:pointer">✕</span>
-  Anchor Ad
 </div>
 
 </body>
