@@ -1,59 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<base href="/bloger-gpt/">
-
 <title>Insight Hub</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="assets/js/main.js"></script>
+<style>
+body { font-family: Arial; background:#f5f5f5; margin:0; }
+.container { max-width:1000px; margin:auto; padding:20px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; }
+.card { background:#fff; padding:15px; border-radius:10px; text-decoration:none; color:#000; }
+.card img { width:100%; border-radius:8px; }
+.card h3 { font-size:16px; }
+</style>
 
 </head>
 
-<body class="bg-orange-300">
+<body>
 
-<div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg mt-10 p-6">
-
-  <!-- HEADER -->
-  <div class="flex justify-between items-center mb-6">
-    <div class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-black text-white flex items-center justify-center rounded-lg font-bold">AI</div>
-      <span class="font-bold text-lg">InsightHub</span>
-    </div>
-
-    <input id="search" placeholder="Search..." class="border rounded-lg px-3 py-1 text-sm">
-  </div>
-
-  <!-- HERO -->
-  <div class="relative mb-6">
-    <img src="https://source.unsplash.com/1200x400/?ai" class="w-full h-60 object-cover rounded-xl">
-    <div class="absolute bottom-4 left-4 text-white">
-      <h1 class="text-2xl font-bold">Top AI Trends You Should Know</h1>
-    </div>
-  </div>
-
-  <!-- FILTER -->
-  <div class="flex gap-4 mb-4">
-    <button class="filter active" data-cat="all">All</button>
-    <button class="filter" data-cat="Technology">Technology</button>
-    <button class="filter" data-cat="Finance">Finance</button>
-    <button class="filter" data-cat="AI Tools">AI Tools</button>
-    <button class="filter" data-cat="Health">Health</button>
-  </div>
-
-  <!-- FEED -->
-  <div id="feed" class="grid md:grid-cols-3 gap-6"></div>
-
+<div class="container">
+  <h1>Insight Hub</h1>
+  <div id="posts" class="grid"></div>
 </div>
 
-<!-- Anchor -->
-<div class="anchor-ad flex items-center justify-center">
-  Anchor Ad
-</div>
+<script>
+fetch('./data/posts.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('posts');
+
+    data.forEach(p => {
+      const card = document.createElement('a');
+
+      card.href = './posts/' + p.slug + '.html'; // ✅ 关键：相对路径
+      card.className = 'card';
+
+      card.innerHTML = `
+        <img src="https://source.unsplash.com/400x200/?${p.category}">
+        <h3>${p.title}</h3>
+      `;
+
+      container.appendChild(card);
+    });
+  });
+</script>
 
 </body>
 </html>
