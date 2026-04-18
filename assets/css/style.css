@@ -1,16 +1,9 @@
+html {
+  font-size: 18px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-}
-
-/* 分类按钮 */
-.filter {
-  color: #6b7280;
-  cursor: pointer;
-}
-
-.filter.active {
-  color: #f59e0b;
-  font-weight: 600;
 }
 
 /* 卡片 */
@@ -20,6 +13,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -27,41 +21,57 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
-/* 图片 */
 .card-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-/* 标题 */
 .card-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
-/* 描述 */
 .card-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: #6b7280;
 }
 
-/* 标签 */
 .badge {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #111827;
+  background: #111;
   color: #fff;
   font-size: 11px;
   padding: 4px 8px;
   border-radius: 6px;
 }
 
-/* 广告卡 */
+/* 广告 */
 .ad-native {
   background: #fff7ed;
   padding: 16px;
   border-radius: 16px;
   border: 1px solid #fed7aa;
+}
+
+/* filter */
+.filter {
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.filter.active {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+/* Anchor */
+.anchor-ad {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
 }
